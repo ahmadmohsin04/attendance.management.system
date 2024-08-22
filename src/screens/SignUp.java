@@ -39,7 +39,8 @@ public class SignUp extends javax.swing.JFrame {
         loginPassword = new javax.swing.JTextField();
         signUpAdmin = new javax.swing.JButton();
         signUpTeacher = new javax.swing.JButton();
-        signUpAdmin1 = new javax.swing.JButton();
+        loginAdmin = new javax.swing.JButton();
+        loginTeacher = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,12 +102,21 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        signUpAdmin1.setBackground(new java.awt.Color(102, 102, 102));
-        signUpAdmin1.setForeground(new java.awt.Color(255, 255, 255));
-        signUpAdmin1.setText("Log in");
-        signUpAdmin1.addActionListener(new java.awt.event.ActionListener() {
+        loginAdmin.setBackground(new java.awt.Color(102, 102, 102));
+        loginAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        loginAdmin.setText("Log in as Admin");
+        loginAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signUpAdmin1ActionPerformed(evt);
+                loginAdminActionPerformed(evt);
+            }
+        });
+
+        loginTeacher.setBackground(new java.awt.Color(102, 102, 102));
+        loginTeacher.setForeground(new java.awt.Color(255, 255, 255));
+        loginTeacher.setText("Log in as Teacher");
+        loginTeacher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginTeacherActionPerformed(evt);
             }
         });
 
@@ -140,11 +150,14 @@ public class SignUp extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(signUpTeacher, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(signUpTeacher, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(loginTeacher, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(signUpAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(signUpAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(loginAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(62, 62, 62))
         );
         jPanel2Layout.setVerticalGroup(
@@ -173,9 +186,11 @@ public class SignUp extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(signUpAdmin)
-                    .addComponent(signUpAdmin1))
+                    .addComponent(loginAdmin))
                 .addGap(18, 18, 18)
-                .addComponent(signUpTeacher)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(signUpTeacher)
+                    .addComponent(loginTeacher))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
 
@@ -228,9 +243,13 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_signUpTeacherActionPerformed
 
-    private void signUpAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpAdmin1ActionPerformed
+    private void loginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_signUpAdmin1ActionPerformed
+    }//GEN-LAST:event_loginAdminActionPerformed
+
+    private void loginTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTeacherActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginTeacherActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,10 +295,11 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton loginAdmin;
     private javax.swing.JTextField loginPassword;
+    private javax.swing.JButton loginTeacher;
     private javax.swing.JTextField loginUsername;
     private javax.swing.JButton signUpAdmin;
-    private javax.swing.JButton signUpAdmin1;
     private javax.swing.JButton signUpTeacher;
     private javax.swing.JTextField signUppassword;
     private javax.swing.JTextField signupUsername;

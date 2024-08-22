@@ -28,7 +28,7 @@ public class Main {
         // Course Enrollment
         CourseEnrollmentManagement.enrollStudent("CCL120", "2023065123", new Date(), "10:00 AM", "Pending");
         CourseEnrollmentManagement.approveEnrollment("CCL120", "2023065123");
-        CourseEnrollmentManagement.listEnrollments();
+         CourseEnrollmentManagement.listEnrollments();
 
         // Attendance Management
         AttendanceManagement.MarkAttendance(true, new Date(), "10:15 AM");

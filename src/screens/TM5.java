@@ -8,12 +8,12 @@ package screens;
  *
  * @author user
  */
-public class SM5 extends javax.swing.JFrame {
+public class TM5 extends javax.swing.JFrame {
 
     /**
-     * Creates new form SM5
+     * Creates new form TM5
      */
-    public SM5() {
+    public TM5() {
         initComponents();
     }
 
@@ -28,52 +28,53 @@ public class SM5 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        listStudents = new javax.swing.JButton();
+        listTeachers = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        studentListArea = new javax.swing.JTextArea();
+        teacherListArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("List Students");
+        setTitle("List Teacher");
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
-        listStudents.setBackground(new java.awt.Color(102, 102, 102));
-        listStudents.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        listStudents.setForeground(new java.awt.Color(255, 255, 255));
-        listStudents.setText("Click here to list all the students");
-        listStudents.addActionListener(new java.awt.event.ActionListener() {
+        listTeachers.setBackground(new java.awt.Color(102, 102, 102));
+        listTeachers.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        listTeachers.setForeground(new java.awt.Color(255, 255, 255));
+        listTeachers.setText("Click here to list all the teachers");
+        listTeachers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listStudentsActionPerformed(evt);
+                listTeachersActionPerformed(evt);
             }
         });
 
-        studentListArea.setBackground(new java.awt.Color(102, 102, 102));
-        studentListArea.setColumns(20);
-        studentListArea.setForeground(new java.awt.Color(255, 255, 255));
-        studentListArea.setRows(5);
-        jScrollPane1.setViewportView(studentListArea);
+        teacherListArea.setBackground(new java.awt.Color(102, 102, 102));
+        teacherListArea.setColumns(20);
+        teacherListArea.setForeground(new java.awt.Color(255, 255, 255));
+        teacherListArea.setRows(5);
+        jScrollPane1.setViewportView(teacherListArea);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(listTeachers)))
                 .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(listStudents)
-                .addGap(103, 103, 103))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(listStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(listTeachers, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -81,7 +82,7 @@ public class SM5 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("List Students");
+        jLabel1.setText("List Teachers");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,9 +119,9 @@ public class SM5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void listStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listStudentsActionPerformed
+    private void listTeachersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listTeachersActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_listStudentsActionPerformed
+    }//GEN-LAST:event_listTeachersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,20 +140,20 @@ public class SM5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TM5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SM5().setVisible(true);
+                new TM5().setVisible(true);
             }
         });
     }
@@ -162,7 +163,7 @@ public class SM5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton listStudents;
-    private javax.swing.JTextArea studentListArea;
+    private javax.swing.JButton listTeachers;
+    private javax.swing.JTextArea teacherListArea;
     // End of variables declaration//GEN-END:variables
 }

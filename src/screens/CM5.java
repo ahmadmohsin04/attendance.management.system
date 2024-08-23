@@ -28,9 +28,9 @@ public class CM5 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        deleteCourse = new javax.swing.JButton();
+        courseList = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        courseListArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,21 +40,21 @@ public class CM5 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
-        deleteCourse.setBackground(new java.awt.Color(102, 102, 102));
-        deleteCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        deleteCourse.setForeground(new java.awt.Color(255, 255, 255));
-        deleteCourse.setText("Click here to list all the courses");
-        deleteCourse.addActionListener(new java.awt.event.ActionListener() {
+        courseList.setBackground(new java.awt.Color(102, 102, 102));
+        courseList.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        courseList.setForeground(new java.awt.Color(255, 255, 255));
+        courseList.setText("Click here to list all the courses");
+        courseList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteCourseActionPerformed(evt);
+                courseListActionPerformed(evt);
             }
         });
 
-        jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        courseListArea.setBackground(new java.awt.Color(102, 102, 102));
+        courseListArea.setColumns(20);
+        courseListArea.setForeground(new java.awt.Color(255, 255, 255));
+        courseListArea.setRows(5);
+        jScrollPane1.setViewportView(courseListArea);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -66,14 +66,14 @@ public class CM5 extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(deleteCourse)
+                .addComponent(courseList)
                 .addGap(106, 106, 106))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(deleteCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(courseList, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -118,9 +118,9 @@ public class CM5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void deleteCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCourseActionPerformed
+    private void courseListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseListActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteCourseActionPerformed
+    }//GEN-LAST:event_courseListActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,11 +158,11 @@ public class CM5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton deleteCourse;
+    private javax.swing.JButton courseList;
+    private javax.swing.JTextArea courseListArea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

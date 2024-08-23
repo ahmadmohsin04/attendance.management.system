@@ -30,7 +30,7 @@ public class CM1 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         createCourse = new javax.swing.JButton();
         updateCourse = new javax.swing.JButton();
-        deleteCourse = new javax.swing.JButton();
+        listCourse = new javax.swing.JButton();
         removeCourse = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -51,10 +51,10 @@ public class CM1 extends javax.swing.JFrame {
         updateCourse.setForeground(new java.awt.Color(255, 255, 255));
         updateCourse.setText("Update Course");
 
-        deleteCourse.setBackground(new java.awt.Color(102, 102, 102));
-        deleteCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        deleteCourse.setForeground(new java.awt.Color(255, 255, 255));
-        deleteCourse.setText("Delete Course");
+        listCourse.setBackground(new java.awt.Color(102, 102, 102));
+        listCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        listCourse.setForeground(new java.awt.Color(255, 255, 255));
+        listCourse.setText("List Course");
 
         removeCourse.setBackground(new java.awt.Color(102, 102, 102));
         removeCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -78,7 +78,7 @@ public class CM1 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(updateCourse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(deleteCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(listCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -91,7 +91,7 @@ public class CM1 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(removeCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(listCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
 
@@ -177,10 +177,10 @@ public class CM1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createCourse;
-    private javax.swing.JButton deleteCourse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton listCourse;
     private javax.swing.JButton removeCourse;
     private javax.swing.JButton updateCourse;
     // End of variables declaration//GEN-END:variables

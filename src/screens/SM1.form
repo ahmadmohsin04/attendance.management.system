@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Course Management"/>
+    <Property name="title" type="java.lang.String" value="Student Management"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -40,7 +40,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="ff" red="cc" type="rgb"/>
+          <Color blue="cc" green="cc" red="ff" type="rgb"/>
         </Property>
       </Properties>
 
@@ -54,7 +54,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -83,13 +83,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="removeCourse" max="32767" attributes="0"/>
-                          <Component id="createCourse" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="removeStudent" alignment="1" max="32767" attributes="0"/>
+                          <Component id="addStudent" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="updateCourse" max="32767" attributes="0"/>
-                          <Component id="listCourse" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="updateStudent" alignment="0" max="32767" attributes="0"/>
+                          <Component id="listStudents" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="55" max="32767" attributes="0"/>
                   </Group>
@@ -100,13 +100,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="createCourse" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="updateCourse" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="addStudent" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="updateStudent" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="removeCourse" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="listCourse" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="removeStudent" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="listStudents" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="130" max="32767" attributes="0"/>
                   </Group>
@@ -114,7 +114,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="createCourse">
+            <Component class="javax.swing.JButton" name="addStudent">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
@@ -125,10 +125,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Create Course"/>
+                <Property name="text" type="java.lang.String" value="Add Student"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="updateCourse">
+            <Component class="javax.swing.JButton" name="updateStudent">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
@@ -139,10 +139,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Update Course"/>
+                <Property name="text" type="java.lang.String" value="Update Student"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="listCourse">
+            <Component class="javax.swing.JButton" name="listStudents">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
@@ -153,10 +153,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="List Course"/>
+                <Property name="text" type="java.lang.String" value="List Students"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="removeCourse">
+            <Component class="javax.swing.JButton" name="removeStudent">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
@@ -167,10 +167,10 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Remove Course"/>
+                <Property name="text" type="java.lang.String" value="Remove Student"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeCourseActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeStudentActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -183,7 +183,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Course Management"/>
+            <Property name="text" type="java.lang.String" value="Student Management"/>
           </Properties>
         </Component>
       </SubComponents>

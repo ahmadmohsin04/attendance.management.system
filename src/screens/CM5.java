@@ -34,6 +34,7 @@ public class CM5 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("List Courses");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 

@@ -46,16 +46,31 @@ public class SM1 extends javax.swing.JFrame {
         addStudent.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         addStudent.setForeground(new java.awt.Color(255, 255, 255));
         addStudent.setText("Add Student");
+        addStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addStudentActionPerformed(evt);
+            }
+        });
 
         updateStudent.setBackground(new java.awt.Color(102, 102, 102));
         updateStudent.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         updateStudent.setForeground(new java.awt.Color(255, 255, 255));
         updateStudent.setText("Update Student");
+        updateStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateStudentActionPerformed(evt);
+            }
+        });
 
         listStudents.setBackground(new java.awt.Color(102, 102, 102));
         listStudents.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         listStudents.setForeground(new java.awt.Color(255, 255, 255));
         listStudents.setText("List Students");
+        listStudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listStudentsActionPerformed(evt);
+            }
+        });
 
         removeStudent.setBackground(new java.awt.Color(102, 102, 102));
         removeStudent.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -153,12 +168,34 @@ public class SM1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void removeStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStudentActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        SM4 s = new SM4();
+        s.setVisible(true);
     }//GEN-LAST:event_removeStudentActionPerformed
 
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        DashboardAdmin d = new DashboardAdmin();
+        d.setVisible(true);
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void addStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addStudentActionPerformed
+        dispose();
+        SM2 s2 = new SM2();
+        s2.setVisible(true);
+    }//GEN-LAST:event_addStudentActionPerformed
+
+    private void updateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStudentActionPerformed
+        dispose();
+        SM3 s3 = new SM3();
+        s3.setVisible(true);
+    }//GEN-LAST:event_updateStudentActionPerformed
+
+    private void listStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listStudentsActionPerformed
+        dispose();
+        SM5 s = new SM5();
+        s.setVisible(true);
+    }//GEN-LAST:event_listStudentsActionPerformed
 
     /**
      * @param args the command line arguments

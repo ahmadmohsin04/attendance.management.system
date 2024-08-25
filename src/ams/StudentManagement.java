@@ -1,7 +1,8 @@
 
 package ams;
-
+import javax.swing.JTextArea;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class StudentManagement {
@@ -12,7 +13,8 @@ public class StudentManagement {
     
         Student student = new Student(studentId, studentName, studentPhone, studentAddress);
         students.add(student);
-        System.out.println("Student added successfully.");
+        JOptionPane j = new JOptionPane();
+        JOptionPane.showMessageDialog(j, "Student added successfully.");
     }
     
     public void updateStudent (String studentId , String studentName , String studentPhone , String studentAddress){
@@ -21,27 +23,33 @@ public class StudentManagement {
                 student.setName(studentName);
                 student.setPh_no(studentPhone);
                 student.setEmail_address(studentAddress);
-                System.out.println("Student Updated Successfully.");
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Student has been updated.");
                 return;
             } else {
-                System.out.println("Student not found.");
+                JOptionPane j2 = new JOptionPane();
+                JOptionPane.showMessageDialog(j2, "Student id not found...");
             }
         }
     }
     
     public void deleteStudent (String studentName){
         for (Student student : students){
-            if (student.getName().equals(studentName)) {
+            if (student.getName().equalsIgnoreCase(studentName)) {
                 students.remove(student);
-                System.out.println("Student Deleted Successfully.");
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Student deleted successfully.");
+            } else {
+                JOptionPane j2 = new JOptionPane();
+                JOptionPane.showMessageDialog(j2, "Student not found...");
             }
         }
     }
     
-    public void listStudents(){
-        System.out.println("Students Available : ");
+    public void listStudents(JTextArea area){
+        area.setText("");
         for (Student student : students){
-            System.out.println(student.getS_id() + "-" + student.getName() );
+            area.append(student.getS_id() + "-" + student.getName() + "\n");
         }
     }
     

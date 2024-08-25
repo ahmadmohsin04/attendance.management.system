@@ -131,6 +131,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Course Management"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseManagementActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="studentManagement">
               <Properties>
@@ -145,6 +148,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Student Management"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentManagementActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="teacherManagement">
               <Properties>
@@ -159,6 +165,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Teacher Management"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teacherManagementActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="attendanceManagement">
               <Properties>

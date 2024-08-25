@@ -1,14 +1,15 @@
 
 package ams;
-
+import javax.swing.JTextArea;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class CourseManagement {
     
     private static ArrayList <Course> courses = new ArrayList<>();
     
-    public static void createCourse (String courseCode , String name){
+    public void createCourse (String courseCode , String name){
         
         Course course = new Course(courseCode, name);
         courses.add(course);
@@ -16,30 +17,37 @@ public class CourseManagement {
         
     }
     
-    public static void updateCourse (String c_Code , String newName){
+    public void updateCourse (String c_Code , String newName){
         for (Course course : courses){
             if (course.getC_code().equals(c_Code)) {
                 course.setName(newName);
-                System.out.println("Course Modified Successfully.");
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Course updated successfully.");
                 return;
             } else {
-                System.out.println("Following course was not found.");
+                JOptionPane j2 = new JOptionPane();
+                JOptionPane.showMessageDialog(j2, "Course code not found.");
             }
         }
     }
     
-    public static void deleteCourse (String cd_Code){
+    public void deleteCourse (String cd_Code){
         for (Course course : courses){
             if (course.getC_code().equals(cd_Code)) {
                 courses.remove(course);
-                System.out.println("Course removed successfully.");
+                JOptionPane j2 = new JOptionPane();
+                JOptionPane.showMessageDialog(j2, "Course deleted successfully.");
+            } else {
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Course code not found.");
             }
         }
     }
     
-    public static void listCourses () {
+    public void listCourses (JTextArea courseSystem) {
+        courseSystem.setText("");
         for (Course course : courses){
-            System.out.println(course.getC_code() + " " + course.getName());
+            courseSystem.append(course.getC_code() + "-" + course.getName() + "\n");
         }
     }
     

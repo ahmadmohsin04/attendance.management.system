@@ -4,12 +4,15 @@
  */
 package screens;
 
+import ams.CourseManagement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
  */
 public class CM4 extends javax.swing.JFrame {
-
+    public CourseManagement c;
     /**
      * Creates new form CM4
      */
@@ -45,6 +48,11 @@ public class CM4 extends javax.swing.JFrame {
         deleteCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         deleteCourse.setForeground(new java.awt.Color(255, 255, 255));
         deleteCourse.setText("Delete Course");
+        deleteCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCourseActionPerformed(evt);
+            }
+        });
 
         courseCodeDelete.setBackground(new java.awt.Color(102, 102, 102));
         courseCodeDelete.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,7 +62,7 @@ public class CM4 extends javax.swing.JFrame {
 
         Dashboard.setBackground(new java.awt.Color(102, 102, 102));
         Dashboard.setForeground(new java.awt.Color(204, 204, 204));
-        Dashboard.setText("Dashboard");
+        Dashboard.setText("<");
         Dashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DashboardActionPerformed(evt);
@@ -68,33 +76,30 @@ public class CM4 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(117, 117, 117)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(courseCodeDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(143, 143, 143)
-                                .addComponent(deleteCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 116, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(courseCodeDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(deleteCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(Dashboard)))
-                .addContainerGap())
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addContainerGap()
+                .addComponent(Dashboard)
+                .addGap(75, 75, 75)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(courseCodeDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(57, 57, 57)
                 .addComponent(deleteCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(Dashboard)
-                .addContainerGap())
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
@@ -137,8 +142,21 @@ public class CM4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        CM1 c = new CM1();
+        c.setVisible(true);
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void deleteCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCourseActionPerformed
+        String cCode = courseCodeDelete.getText().toString();
+        if (!cCode.isEmpty()) {
+            CourseManagement c3 = new CourseManagement();
+            c3.deleteCourse(cCode);
+        } else {
+            JOptionPane j = new JOptionPane();
+            JOptionPane.showMessageDialog(j, "Course code cannot be empty.");
+        }
+    }//GEN-LAST:event_deleteCourseActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,8 @@
 package screens;
 
 import ams.UserManagement;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,17 +34,17 @@ public class SignUp extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         signupUsername = new javax.swing.JTextField();
-        signUppassword = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         loginUsername = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        loginPassword = new javax.swing.JTextField();
         signUpAdmin = new javax.swing.JButton();
         signUpTeacher = new javax.swing.JButton();
         loginAdmin = new javax.swing.JButton();
         loginTeacher = new javax.swing.JButton();
+        signupPassword = new javax.swing.JPasswordField();
+        loginPassword = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,9 +61,11 @@ public class SignUp extends javax.swing.JFrame {
 
         signupUsername.setBackground(new java.awt.Color(102, 102, 102));
         signupUsername.setForeground(new java.awt.Color(255, 255, 255));
-
-        signUppassword.setBackground(new java.awt.Color(102, 102, 102));
-        signUppassword.setForeground(new java.awt.Color(255, 255, 255));
+        signupUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signupUsernameActionPerformed(evt);
+            }
+        });
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Username : ");
@@ -82,9 +86,6 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Password : ");
-
-        loginPassword.setBackground(new java.awt.Color(102, 102, 102));
-        loginPassword.setForeground(new java.awt.Color(255, 255, 255));
 
         signUpAdmin.setBackground(new java.awt.Color(102, 102, 102));
         signUpAdmin.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,6 +123,12 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        signupPassword.setBackground(new java.awt.Color(102, 102, 102));
+        signupPassword.setForeground(new java.awt.Color(255, 255, 255));
+
+        loginPassword.setBackground(new java.awt.Color(102, 102, 102));
+        loginPassword.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -132,17 +139,17 @@ public class SignUp extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(signUppassword, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(signupUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(signupUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(signupPassword))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(loginUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(loginPassword))
                 .addGap(51, 51, 51))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,16 +182,16 @@ public class SignUp extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(46, 46, 46)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(signUppassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
+                            .addComponent(jLabel4)
+                            .addComponent(signupPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(loginUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addGap(46, 46, 46)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))))
+                            .addComponent(jLabel6)
+                            .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(signUpAdmin)
@@ -238,20 +245,74 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_loginUsernameActionPerformed
 
     private void signUpAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpAdminActionPerformed
+        String username = signupUsername.getText().toString();
+        String password = signupPassword.getText();
+        if (!username.isEmpty() && !password.isEmpty()) {
+            UserManagement u1 = new UserManagement();
+            u1.adminSignup(username, password);
+            JOptionPane p1 = new JOptionPane();
+            JOptionPane.showMessageDialog(p1 ,"Account Created Successfully.");
+            signupUsername.setText("");
+            signupPassword.setText("");
+        } else {
+            JOptionPane p2 = new JOptionPane();
+            JOptionPane.showMessageDialog(p2, "Username and Password cannot be empty.");
+        }
         
+        
+    
     }//GEN-LAST:event_signUpAdminActionPerformed
 
     private void signUpTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpTeacherActionPerformed
-        // TODO add your handling code here:
+         String username = signupUsername.getText().toString();
+        String password = signupPassword.getText();
+        if (!username.isEmpty() && !password.isEmpty()) {
+            UserManagement u1 = new UserManagement();
+            u1.adminSignup(username, password);
+            JOptionPane p1 = new JOptionPane();
+            JOptionPane.showMessageDialog(p1 ,"Account Created Successfully.");
+            signupUsername.setText("");
+            signupPassword.setText("");
+        } else {
+            JOptionPane p2 = new JOptionPane();
+            JOptionPane.showMessageDialog(p2, "Username and Password cannot be empty.");
+        }
     }//GEN-LAST:event_signUpTeacherActionPerformed
 
     private void loginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginAdminActionPerformed
-        // TODO add your handling code here:
+        String username = loginUsername.getText();
+        String password = loginPassword.getText();
+        if (!username.isEmpty() && !password.isEmpty()) {
+            UserManagement user = new UserManagement();
+            user.adminLogin(username, password);
+            dispose();
+            DashboardAdmin d = new DashboardAdmin();
+            d.setVisible(true);
+        } else {
+            JOptionPane j1 = new JOptionPane();
+            JOptionPane.showMessageDialog(j1, "Username or Password cannot be empty.");
+        }
+        
     }//GEN-LAST:event_loginAdminActionPerformed
 
     private void loginTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTeacherActionPerformed
-        // TODO add your handling code here:
+         String username = loginUsername.getText();
+        String password = loginPassword.getText();
+        if (!username.isEmpty() && !password.isEmpty()) {
+            UserManagement user = new UserManagement();
+            user.adminLogin(username, password);
+            dispose();
+            DashboardAdmin d = new DashboardAdmin();
+            d.setVisible(true);
+        } else {
+            JOptionPane j1 = new JOptionPane();
+            JOptionPane.showMessageDialog(j1, "Username or Password cannot be empty.");
+        }
     }//GEN-LAST:event_loginTeacherActionPerformed
+
+    private void signupUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signupUsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,12 +359,12 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginAdmin;
-    private javax.swing.JTextField loginPassword;
+    private javax.swing.JPasswordField loginPassword;
     private javax.swing.JButton loginTeacher;
     private javax.swing.JTextField loginUsername;
     private javax.swing.JButton signUpAdmin;
     private javax.swing.JButton signUpTeacher;
-    private javax.swing.JTextField signUppassword;
+    private javax.swing.JPasswordField signupPassword;
     private javax.swing.JTextField signupUsername;
     // End of variables declaration//GEN-END:variables
 }

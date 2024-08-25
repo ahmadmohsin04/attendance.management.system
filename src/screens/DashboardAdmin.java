@@ -46,16 +46,31 @@ public class DashboardAdmin extends javax.swing.JFrame {
         courseManagement.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         courseManagement.setForeground(new java.awt.Color(255, 255, 255));
         courseManagement.setText("Course Management");
+        courseManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseManagementActionPerformed(evt);
+            }
+        });
 
         studentManagement.setBackground(new java.awt.Color(102, 102, 102));
         studentManagement.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         studentManagement.setForeground(new java.awt.Color(255, 255, 255));
         studentManagement.setText("Student Management");
+        studentManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentManagementActionPerformed(evt);
+            }
+        });
 
         teacherManagement.setBackground(new java.awt.Color(102, 102, 102));
         teacherManagement.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         teacherManagement.setForeground(new java.awt.Color(255, 255, 255));
         teacherManagement.setText("Teacher Management");
+        teacherManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                teacherManagementActionPerformed(evt);
+            }
+        });
 
         attendanceManagement.setBackground(new java.awt.Color(102, 102, 102));
         attendanceManagement.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -152,12 +167,34 @@ public class DashboardAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void attendanceManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceManagementActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        AM1 am1 = new AM1();
+        am1.setVisible(true);
     }//GEN-LAST:event_attendanceManagementActionPerformed
 
     private void courseEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseEnrollmentActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        CEM1 cem1 = new CEM1();
+        cem1.setVisible(true);
     }//GEN-LAST:event_courseEnrollmentActionPerformed
+
+    private void courseManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseManagementActionPerformed
+        dispose();
+        CM1 cm1 = new CM1();
+        cm1.setVisible(true);
+    }//GEN-LAST:event_courseManagementActionPerformed
+
+    private void studentManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentManagementActionPerformed
+        dispose();
+        SM1 sm1 = new SM1();
+        sm1.setVisible(true);
+    }//GEN-LAST:event_studentManagementActionPerformed
+
+    private void teacherManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacherManagementActionPerformed
+        dispose();
+        TM1 tm1 = new TM1();
+        tm1.setVisible(true);
+    }//GEN-LAST:event_teacherManagementActionPerformed
 
     /**
      * @param args the command line arguments

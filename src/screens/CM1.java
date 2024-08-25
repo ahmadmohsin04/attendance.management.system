@@ -46,16 +46,31 @@ public class CM1 extends javax.swing.JFrame {
         createCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         createCourse.setForeground(new java.awt.Color(255, 255, 255));
         createCourse.setText("Create Course");
+        createCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createCourseActionPerformed(evt);
+            }
+        });
 
         updateCourse.setBackground(new java.awt.Color(102, 102, 102));
         updateCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         updateCourse.setForeground(new java.awt.Color(255, 255, 255));
         updateCourse.setText("Update Course");
+        updateCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateCourseActionPerformed(evt);
+            }
+        });
 
         listCourse.setBackground(new java.awt.Color(102, 102, 102));
         listCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         listCourse.setForeground(new java.awt.Color(255, 255, 255));
         listCourse.setText("List Course");
+        listCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listCourseActionPerformed(evt);
+            }
+        });
 
         removeCourse.setBackground(new java.awt.Color(102, 102, 102));
         removeCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -153,12 +168,34 @@ public class CM1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void removeCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCourseActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        CM4 cm4 = new CM4();
+        cm4.setVisible(true);
     }//GEN-LAST:event_removeCourseActionPerformed
 
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        DashboardAdmin d = new DashboardAdmin();
+        d.setVisible(true);
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void createCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createCourseActionPerformed
+        dispose();
+        CM2 cm2 = new CM2();
+        cm2.setVisible(true);
+    }//GEN-LAST:event_createCourseActionPerformed
+
+    private void updateCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCourseActionPerformed
+        dispose();
+        CM3 cm3 = new CM3();
+        cm3.setVisible(true);
+    }//GEN-LAST:event_updateCourseActionPerformed
+
+    private void listCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listCourseActionPerformed
+        dispose();
+        CM5 cm5 = new CM5();
+        cm5.setVisible(true);
+    }//GEN-LAST:event_listCourseActionPerformed
 
     /**
      * @param args the command line arguments

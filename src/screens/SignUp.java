@@ -4,6 +4,8 @@
  */
 package screens;
 
+import ams.UserManagement;
+
 /**
  *
  * @author user
@@ -236,7 +238,7 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_loginUsernameActionPerformed
 
     private void signUpAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpAdminActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_signUpAdminActionPerformed
 
     private void signUpTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpTeacherActionPerformed

@@ -30,6 +30,7 @@ public class AM1 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         createCourse = new javax.swing.JButton();
         updateCourse = new javax.swing.JButton();
+        Dashboard = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,6 +55,15 @@ public class AM1 extends javax.swing.JFrame {
         updateCourse.setForeground(new java.awt.Color(255, 255, 255));
         updateCourse.setText("List Attendance");
 
+        Dashboard.setBackground(new java.awt.Color(102, 102, 102));
+        Dashboard.setForeground(new java.awt.Color(204, 204, 204));
+        Dashboard.setText("Dashboard");
+        Dashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DashboardActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -64,6 +74,10 @@ public class AM1 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(updateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Dashboard)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,7 +86,9 @@ public class AM1 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addComponent(Dashboard)
+                .addContainerGap())
         );
 
         jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
@@ -120,6 +136,10 @@ public class AM1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_createCourseActionPerformed
 
+    private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DashboardActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -156,6 +176,7 @@ public class AM1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Dashboard;
     private javax.swing.JButton createCourse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

@@ -4,12 +4,14 @@
  */
 package screens;
 
+import ams.AttendanceManagement;
+
 /**
  *
  * @author user
  */
 public class AM3 extends javax.swing.JFrame {
-
+    AttendanceManagement a = new AttendanceManagement();
     /**
      * Creates new form AM3
      */
@@ -31,6 +33,7 @@ public class AM3 extends javax.swing.JFrame {
         listAttendance = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         attendancelistArea = new javax.swing.JTextArea();
+        Dashboard2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +59,15 @@ public class AM3 extends javax.swing.JFrame {
         attendancelistArea.setRows(5);
         jScrollPane1.setViewportView(attendancelistArea);
 
+        Dashboard2.setBackground(new java.awt.Color(102, 102, 102));
+        Dashboard2.setForeground(new java.awt.Color(204, 204, 204));
+        Dashboard2.setText("<");
+        Dashboard2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Dashboard2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -66,15 +78,22 @@ public class AM3 extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
+                        .addContainerGap()
+                        .addComponent(Dashboard2)
+                        .addGap(71, 71, 71)
                         .addComponent(listAttendance)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(listAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(listAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Dashboard2)))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -120,8 +139,14 @@ public class AM3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listAttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listAttendanceActionPerformed
-        // TODO add your handling code here:
+        a.viewAttendance(attendancelistArea);
     }//GEN-LAST:event_listAttendanceActionPerformed
+
+    private void Dashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard2ActionPerformed
+        dispose();
+        AM1 a = new AM1();
+        a.setVisible(true);
+    }//GEN-LAST:event_Dashboard2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +184,7 @@ public class AM3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Dashboard2;
     private javax.swing.JTextArea attendancelistArea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

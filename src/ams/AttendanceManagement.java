@@ -1,22 +1,26 @@
 
 package ams;
-
+import javax.swing.JTextArea;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 
 public class AttendanceManagement {
     private static ArrayList <Attendance> attendance = new ArrayList<>();
     
-    public static void MarkAttendance (Boolean mark , Date date , String time){
+    public void MarkAttendance (Boolean mark , LocalDate date , String time){
        Attendance attend = new Attendance(mark, date, time);
        attendance.add(attend);
-        System.out.println("Attendance Marked Successfully.");
+        JOptionPane j = new JOptionPane();
+        JOptionPane.showMessageDialog(j, "Attendance marked successfully.");
     }
     
-    public static void viewAttendance (){
+    public void viewAttendance (JTextArea area){
+        area.setText("");
         for (Attendance attend : attendance){
-            System.out.println("Date : " + attend.getDate() + ", Time : " + attend.getTime() + ", Mark : " + (attend.isAttendance_mark() ? "Present" : "Absent"));
+            area.append("Date : " + attend.getDate() + ", Time : " + attend.getTime() + ", Mark : " + (attend.isAttendance_mark() ? "Present" : "Absent" + "\n"));
         }
     }
     

@@ -4,12 +4,16 @@
  */
 package screens;
 
+import ams.AttendanceManagement;
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  *
  * @author user
  */
 public class AM2 extends javax.swing.JFrame {
-
+    AttendanceManagement a = new AttendanceManagement();
     /**
      * Creates new form AM2
      */
@@ -29,7 +33,7 @@ public class AM2 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         MarkAttendance = new javax.swing.JButton();
-        courseName = new javax.swing.JTextField();
+        markAttendanceTime = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         Dashboard2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -45,16 +49,21 @@ public class AM2 extends javax.swing.JFrame {
         MarkAttendance.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         MarkAttendance.setForeground(new java.awt.Color(255, 255, 255));
         MarkAttendance.setText("Mark Attendance");
+        MarkAttendance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MarkAttendanceActionPerformed(evt);
+            }
+        });
 
-        courseName.setBackground(new java.awt.Color(102, 102, 102));
-        courseName.setForeground(new java.awt.Color(255, 255, 255));
+        markAttendanceTime.setBackground(new java.awt.Color(102, 102, 102));
+        markAttendanceTime.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Time :");
 
         Dashboard2.setBackground(new java.awt.Color(102, 102, 102));
         Dashboard2.setForeground(new java.awt.Color(204, 204, 204));
-        Dashboard2.setText("Dashboard");
+        Dashboard2.setText("<");
         Dashboard2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Dashboard2ActionPerformed(evt);
@@ -68,30 +77,29 @@ public class AM2 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(137, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MarkAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(courseName, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(127, 127, 127))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Dashboard2)
-                        .addContainerGap())))
+                    .addComponent(MarkAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(markAttendanceTime, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(127, 127, 127))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Dashboard2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(Dashboard2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(courseName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(markAttendanceTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(MarkAttendance, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102)
-                .addComponent(Dashboard2)
-                .addContainerGap())
+                .addGap(131, 131, 131))
         );
 
         jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
@@ -134,8 +142,17 @@ public class AM2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Dashboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard2ActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        AM1 a = new AM1();
+        a.setVisible(true);
     }//GEN-LAST:event_Dashboard2ActionPerformed
+
+    private void MarkAttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarkAttendanceActionPerformed
+        String time = markAttendanceTime.getText().toString();
+        LocalDate d = LocalDate.now();
+        a.MarkAttendance(true, d, time);
+        markAttendanceTime.setText("");
+    }//GEN-LAST:event_MarkAttendanceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,14 +190,12 @@ public class AM2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Dashboard;
-    private javax.swing.JButton Dashboard1;
     private javax.swing.JButton Dashboard2;
     private javax.swing.JButton MarkAttendance;
-    private javax.swing.JTextField courseName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField markAttendanceTime;
     // End of variables declaration//GEN-END:variables
 }

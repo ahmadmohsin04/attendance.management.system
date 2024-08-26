@@ -54,6 +54,11 @@ public class AM1 extends javax.swing.JFrame {
         updateCourse.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         updateCourse.setForeground(new java.awt.Color(255, 255, 255));
         updateCourse.setText("List Attendance");
+        updateCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateCourseActionPerformed(evt);
+            }
+        });
 
         Dashboard.setBackground(new java.awt.Color(102, 102, 102));
         Dashboard.setForeground(new java.awt.Color(204, 204, 204));
@@ -133,12 +138,22 @@ public class AM1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createCourseActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        AM2 a = new AM2();
+        a.setVisible(true);
     }//GEN-LAST:event_createCourseActionPerformed
 
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        DashboardAdmin d = new DashboardAdmin();
+        d.setVisible(true);
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void updateCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCourseActionPerformed
+        dispose();
+        AM3 a = new AM3();
+        a.setVisible(true);
+    }//GEN-LAST:event_updateCourseActionPerformed
 
     /**
      * @param args the command line arguments

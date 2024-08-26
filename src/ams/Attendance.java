@@ -1,15 +1,16 @@
 
 package ams;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Attendance {
     
     private boolean attendance_mark;
-    private Date date;
+    private LocalDate date;
     private String time;
 
-    public Attendance(boolean attendance_mark, Date date, String time) {
+    public Attendance(boolean attendance_mark, LocalDate date, String time) {
         this.attendance_mark = attendance_mark;
         this.date = date;
         this.time = time;
@@ -19,7 +20,7 @@ public class Attendance {
         return attendance_mark;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -31,7 +32,7 @@ public class Attendance {
         this.attendance_mark = attendance_mark;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

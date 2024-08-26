@@ -164,6 +164,7 @@ public class DashboardAdmin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void attendanceManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceManagementActionPerformed

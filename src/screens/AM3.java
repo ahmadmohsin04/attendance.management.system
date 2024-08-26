@@ -136,6 +136,7 @@ public class AM3 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void listAttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listAttendanceActionPerformed

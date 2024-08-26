@@ -136,6 +136,7 @@ public class CEM4 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void enrollmenListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmenListActionPerformed

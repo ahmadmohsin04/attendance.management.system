@@ -239,6 +239,7 @@ public class TM2 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void teacherDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacherDepartmentActionPerformed

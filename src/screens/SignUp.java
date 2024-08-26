@@ -40,9 +40,7 @@ public class SignUp extends javax.swing.JFrame {
         loginUsername = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         signUpAdmin = new javax.swing.JButton();
-        signUpTeacher = new javax.swing.JButton();
         loginAdmin = new javax.swing.JButton();
-        loginTeacher = new javax.swing.JButton();
         signupPassword = new javax.swing.JPasswordField();
         loginPassword = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
@@ -89,37 +87,19 @@ public class SignUp extends javax.swing.JFrame {
 
         signUpAdmin.setBackground(new java.awt.Color(102, 102, 102));
         signUpAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        signUpAdmin.setText("Sign up as Admin");
+        signUpAdmin.setText("Sign up ");
         signUpAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signUpAdminActionPerformed(evt);
             }
         });
 
-        signUpTeacher.setBackground(new java.awt.Color(102, 102, 102));
-        signUpTeacher.setForeground(new java.awt.Color(255, 255, 255));
-        signUpTeacher.setText("Sign up as Teacher");
-        signUpTeacher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signUpTeacherActionPerformed(evt);
-            }
-        });
-
         loginAdmin.setBackground(new java.awt.Color(102, 102, 102));
         loginAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        loginAdmin.setText("Log in as Admin");
+        loginAdmin.setText("Log in");
         loginAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginAdminActionPerformed(evt);
-            }
-        });
-
-        loginTeacher.setBackground(new java.awt.Color(102, 102, 102));
-        loginTeacher.setForeground(new java.awt.Color(255, 255, 255));
-        loginTeacher.setText("Log in as Teacher");
-        loginTeacher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginTeacherActionPerformed(evt);
             }
         });
 
@@ -158,15 +138,9 @@ public class SignUp extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(signUpTeacher, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(loginTeacher, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(signUpAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(loginAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(signUpAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                        .addComponent(loginAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(62, 62, 62))
         );
         jPanel2Layout.setVerticalGroup(
@@ -196,11 +170,7 @@ public class SignUp extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(signUpAdmin)
                     .addComponent(loginAdmin))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(signUpTeacher)
-                    .addComponent(loginTeacher))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
@@ -238,6 +208,7 @@ public class SignUp extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginUsernameActionPerformed
@@ -263,22 +234,6 @@ public class SignUp extends javax.swing.JFrame {
     
     }//GEN-LAST:event_signUpAdminActionPerformed
 
-    private void signUpTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpTeacherActionPerformed
-         String username = signupUsername.getText().toString();
-        String password = signupPassword.getText();
-        if (!username.isEmpty() && !password.isEmpty()) {
-            UserManagement u1 = new UserManagement();
-            u1.adminSignup(username, password);
-            JOptionPane p1 = new JOptionPane();
-            JOptionPane.showMessageDialog(p1 ,"Account Created Successfully.");
-            signupUsername.setText("");
-            signupPassword.setText("");
-        } else {
-            JOptionPane p2 = new JOptionPane();
-            JOptionPane.showMessageDialog(p2, "Username and Password cannot be empty.");
-        }
-    }//GEN-LAST:event_signUpTeacherActionPerformed
-
     private void loginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginAdminActionPerformed
         String username = loginUsername.getText();
         String password = loginPassword.getText();
@@ -294,21 +249,6 @@ public class SignUp extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_loginAdminActionPerformed
-
-    private void loginTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTeacherActionPerformed
-         String username = loginUsername.getText();
-        String password = loginPassword.getText();
-        if (!username.isEmpty() && !password.isEmpty()) {
-            UserManagement user = new UserManagement();
-            user.adminLogin(username, password);
-            dispose();
-            DashboardAdmin d = new DashboardAdmin();
-            d.setVisible(true);
-        } else {
-            JOptionPane j1 = new JOptionPane();
-            JOptionPane.showMessageDialog(j1, "Username or Password cannot be empty.");
-        }
-    }//GEN-LAST:event_loginTeacherActionPerformed
 
     private void signupUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupUsernameActionPerformed
         // TODO add your handling code here:
@@ -360,10 +300,8 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginAdmin;
     private javax.swing.JPasswordField loginPassword;
-    private javax.swing.JButton loginTeacher;
     private javax.swing.JTextField loginUsername;
     private javax.swing.JButton signUpAdmin;
-    private javax.swing.JButton signUpTeacher;
     private javax.swing.JPasswordField signupPassword;
     private javax.swing.JTextField signupUsername;
     // End of variables declaration//GEN-END:variables

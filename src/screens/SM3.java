@@ -194,6 +194,7 @@ public class SM3 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void updatedAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatedAddressActionPerformed

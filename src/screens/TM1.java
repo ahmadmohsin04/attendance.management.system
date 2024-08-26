@@ -165,6 +165,7 @@ public class TM1 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void removeTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTeacherActionPerformed

@@ -4,12 +4,14 @@
  */
 package screens;
 
+import ams.TeacherManagement;
+
 /**
  *
  * @author user
  */
 public class TM5 extends javax.swing.JFrame {
-
+    TeacherManagement t = new TeacherManagement();
     /**
      * Creates new form TM5
      */
@@ -31,6 +33,7 @@ public class TM5 extends javax.swing.JFrame {
         listTeachers = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         teacherListArea = new javax.swing.JTextArea();
+        Dashboard = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +59,15 @@ public class TM5 extends javax.swing.JFrame {
         teacherListArea.setRows(5);
         jScrollPane1.setViewportView(teacherListArea);
 
+        Dashboard.setBackground(new java.awt.Color(102, 102, 102));
+        Dashboard.setForeground(new java.awt.Color(204, 204, 204));
+        Dashboard.setText("<");
+        Dashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DashboardActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -66,15 +78,22 @@ public class TM5 extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
+                        .addContainerGap()
+                        .addComponent(Dashboard)
+                        .addGap(76, 76, 76)
                         .addComponent(listTeachers)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(listTeachers, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(listTeachers, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Dashboard)))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -120,8 +139,14 @@ public class TM5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listTeachersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listTeachersActionPerformed
-        // TODO add your handling code here:
+        t.listTeachers(teacherListArea);
     }//GEN-LAST:event_listTeachersActionPerformed
+
+    private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
+        dispose();
+        TM1 t = new TM1();
+        t.setVisible(true);
+    }//GEN-LAST:event_DashboardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +184,7 @@ public class TM5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Dashboard;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -1,18 +1,20 @@
 
 package ams;
-
+import javax.swing.JTextArea;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class TeacherManagement {
     private static ArrayList<Teacher> teachers = new ArrayList<>();
 
-    public static void addTeacher(String emp_code, String name, String salary, String depart, String address, String ph_no) {
+    public void addTeacher(String emp_code, String name, String salary, String depart, String address, String ph_no) {
         Teacher teacher = new Teacher(emp_code, name, salary, depart, address, ph_no);
         teachers.add(teacher);
-        System.out.println("Teacher added successfully.");
+        JOptionPane j = new JOptionPane();
+        JOptionPane.showMessageDialog(j, "Teacher added successfully.");
     }
 
-    public static void updateTeacher(String emp_code, String newName, String newSalary, String newDepart, String newAddress, String newPh_no) {
+    public void updateTeacher(String emp_code, String newName, String newSalary, String newDepart, String newAddress, String newPh_no) {
         for (Teacher teacher : teachers) {
             if (teacher.getEmp_code().equals(emp_code)) {
                 teacher.setName(newName);
@@ -20,22 +22,26 @@ public class TeacherManagement {
                 teacher.setDepart(newDepart);
                 teacher.setAddress(newAddress);
                 teacher.setPh_no(newPh_no);
-                System.out.println("Teacher updated successfully.");
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Teacher updated successfully.");
                 return;
+            } else {
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Teacher with the following code " + emp_code +" was not found.");
             }
         }
-        System.out.println("Teacher not found: " + emp_code);
     }
 
-    public static void deleteTeacher(String emp_code) {
+    public void deleteTeacher(String emp_code) {
         teachers.removeIf(teacher -> teacher.getEmp_code().equals(emp_code));
-        System.out.println("Teacher deleted successfully.");
+        JOptionPane j = new JOptionPane();
+        JOptionPane.showMessageDialog(j, "Teacher deleted successfully.");
     }
 
-    public static void listTeachers() {
-        System.out.println("Teachers Available:");
+    public void listTeachers(JTextArea area) {
+        area.setText("");
         for (Teacher teacher : teachers) {
-            System.out.println(teacher.getEmp_code() + " - " + teacher.getName());
+            area.append(teacher.getEmp_code() + " - " + teacher.getName() + "\n");
         }
     }
 }

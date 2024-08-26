@@ -46,16 +46,31 @@ public class TM1 extends javax.swing.JFrame {
         addTeacher.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         addTeacher.setForeground(new java.awt.Color(255, 255, 255));
         addTeacher.setText("Add Teacher");
+        addTeacher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTeacherActionPerformed(evt);
+            }
+        });
 
         updateTeacher.setBackground(new java.awt.Color(102, 102, 102));
         updateTeacher.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         updateTeacher.setForeground(new java.awt.Color(255, 255, 255));
         updateTeacher.setText("Update Teacher");
+        updateTeacher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateTeacherActionPerformed(evt);
+            }
+        });
 
         listTeacher.setBackground(new java.awt.Color(102, 102, 102));
         listTeacher.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         listTeacher.setForeground(new java.awt.Color(255, 255, 255));
         listTeacher.setText("List Teachers");
+        listTeacher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listTeacherActionPerformed(evt);
+            }
+        });
 
         removeTeacher.setBackground(new java.awt.Color(102, 102, 102));
         removeTeacher.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
@@ -153,12 +168,34 @@ public class TM1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void removeTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTeacherActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        TM4 t = new TM4();
+        t.setVisible(true);
     }//GEN-LAST:event_removeTeacherActionPerformed
 
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        DashboardAdmin d = new DashboardAdmin();
+        d.setVisible(true);
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void addTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTeacherActionPerformed
+        dispose();
+        TM2 t = new TM2();
+        t.setVisible(true);
+    }//GEN-LAST:event_addTeacherActionPerformed
+
+    private void updateTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTeacherActionPerformed
+        dispose();
+        TM3 t = new TM3();
+        t.setVisible(true);
+    }//GEN-LAST:event_updateTeacherActionPerformed
+
+    private void listTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listTeacherActionPerformed
+        dispose();
+        TM5 t = new TM5();
+        t.setVisible(true);
+    }//GEN-LAST:event_listTeacherActionPerformed
 
     /**
      * @param args the command line arguments

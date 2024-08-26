@@ -4,12 +4,14 @@
  */
 package screens;
 
+import ams.CourseEnrollmentManagement;
+
 /**
  *
  * @author user
  */
 public class CEM3 extends javax.swing.JFrame {
-
+    CourseEnrollmentManagement c = new CourseEnrollmentManagement();
     /**
      * Creates new form CEM3
      */
@@ -47,6 +49,11 @@ public class CEM3 extends javax.swing.JFrame {
         approveEnrollment.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         approveEnrollment.setForeground(new java.awt.Color(255, 255, 255));
         approveEnrollment.setText("Approve Enrollment");
+        approveEnrollment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approveEnrollmentActionPerformed(evt);
+            }
+        });
 
         courseCodeApprove.setBackground(new java.awt.Color(102, 102, 102));
         courseCodeApprove.setForeground(new java.awt.Color(255, 255, 255));
@@ -62,7 +69,7 @@ public class CEM3 extends javax.swing.JFrame {
 
         Dashboard.setBackground(new java.awt.Color(102, 102, 102));
         Dashboard.setForeground(new java.awt.Color(204, 204, 204));
-        Dashboard.setText("Dashboard");
+        Dashboard.setText("<");
         Dashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DashboardActionPerformed(evt);
@@ -73,32 +80,34 @@ public class CEM3 extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(studentIdApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(courseCodeApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(122, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(approveEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134))
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(approveEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(134, 134, 134))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(Dashboard)
-                        .addContainerGap())))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(studentIdApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(courseCodeApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Dashboard)))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addContainerGap()
+                .addComponent(Dashboard)
+                .addGap(65, 65, 65)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(courseCodeApprove, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -108,9 +117,7 @@ public class CEM3 extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(54, 54, 54)
                 .addComponent(approveEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(Dashboard)
-                .addContainerGap())
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
@@ -153,8 +160,20 @@ public class CEM3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        CEM1 c = new CEM1();
+        c.setVisible(true);
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void approveEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveEnrollmentActionPerformed
+        String code = courseCodeApprove.getText().toString();
+        String sid = studentIdApprove.getText().toString();
+        
+        c.approveEnrollment(code, sid);
+        courseCodeApprove.setText("");
+        studentIdApprove.setText("");
+        
+    }//GEN-LAST:event_approveEnrollmentActionPerformed
 
     /**
      * @param args the command line arguments

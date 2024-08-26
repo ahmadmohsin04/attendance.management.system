@@ -1,34 +1,40 @@
 
 package ams;
-
+import javax.swing.JTextArea;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class CourseEnrollmentManagement {
     
     private static ArrayList <Course_Enrollment> courseEnrollManage = new ArrayList<>();
     
-    public static void enrollStudent (String courseCode , String sid , Date date , String time , String status){
+    public void enrollStudent (String courseCode , String sid , LocalDate date , String time , String status){
         Course_Enrollment enrollment = new Course_Enrollment(courseCode, sid, date, time, status);
         courseEnrollManage.add(enrollment);
-        System.out.println("Course Enrolled Successfully.");
+        JOptionPane j = new JOptionPane();
+        JOptionPane.showMessageDialog(j, "Student enrolled successfully.");
     }
     
-    public static void approveEnrollment (String courseCode , String studentId){
+    public void approveEnrollment (String courseCode , String studentId){
         for(Course_Enrollment course : courseEnrollManage){
             if (course.getC_code().equals(courseCode) && course.getSid().equals(studentId)) {
                 course.setStatus("Approved.");
-                System.out.println("Enrollment approved for student with id : " + studentId + " , in course : " + courseCode);
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Enrollment approved for student with id : " + studentId + " , in course : " + courseCode);
                 return; 
             } else {
-                System.out.println("Enrollment not found.");
+                JOptionPane j = new JOptionPane();
+                JOptionPane.showMessageDialog(j, "Course code or Student id not found.");
             }
         }
     }
     
-    public static void listEnrollments (){
+    public void listEnrollments (JTextArea area){
+        area.setText("");
         for(Course_Enrollment course : courseEnrollManage){
-            System.out.println("Course : " + course.getC_code() + "Student : " + course.getSid() + "Date : " + course.getDate() + "Status : " + course.getStatus());
+            area.append("Course : " + course.getC_code() + ", Student : " + course.getSid() + ", Date : " + course.getDate() + ", Status : " + course.getStatus()+"\n");
         }
     }
     

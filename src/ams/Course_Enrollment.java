@@ -1,6 +1,7 @@
 
 package ams;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -8,11 +9,11 @@ public class Course_Enrollment {
     
     private String c_code;
     private String sid;
-    private Date date;
+    private LocalDate date;
     private String time;
     private String status;
 
-    public Course_Enrollment(String c_code, String sid, Date date, String time, String status) {
+    public Course_Enrollment(String c_code, String sid, LocalDate date, String time, String status) {
         this.c_code = c_code;
         this.sid = sid;
         this.date = date;
@@ -28,7 +29,7 @@ public class Course_Enrollment {
         return sid;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -48,7 +49,7 @@ public class Course_Enrollment {
         this.sid = sid;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

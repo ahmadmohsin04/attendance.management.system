@@ -4,12 +4,14 @@
  */
 package screens;
 
+import ams.CourseEnrollmentManagement;
+
 /**
  *
  * @author user
  */
 public class CEM4 extends javax.swing.JFrame {
-
+    CourseEnrollmentManagement c = new CourseEnrollmentManagement();
     /**
      * Creates new form CEM4
      */
@@ -31,6 +33,7 @@ public class CEM4 extends javax.swing.JFrame {
         enrollmenList = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         enrollmentsListArea = new javax.swing.JTextArea();
+        Dashboard = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,9 +55,19 @@ public class CEM4 extends javax.swing.JFrame {
 
         enrollmentsListArea.setBackground(new java.awt.Color(102, 102, 102));
         enrollmentsListArea.setColumns(20);
+        enrollmentsListArea.setFont(new java.awt.Font("Helvetica Neue", 1, 11)); // NOI18N
         enrollmentsListArea.setForeground(new java.awt.Color(255, 255, 255));
         enrollmentsListArea.setRows(5);
         jScrollPane1.setViewportView(enrollmentsListArea);
+
+        Dashboard.setBackground(new java.awt.Color(102, 102, 102));
+        Dashboard.setForeground(new java.awt.Color(204, 204, 204));
+        Dashboard.setText("<");
+        Dashboard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DashboardActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -65,15 +78,22 @@ public class CEM4 extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(Dashboard)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(enrollmenList)
                 .addGap(88, 88, 88))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(enrollmenList, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(enrollmenList, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Dashboard)))
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -119,8 +139,14 @@ public class CEM4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enrollmenListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmenListActionPerformed
-        // TODO add your handling code here:
+        c.listEnrollments(enrollmentsListArea);
     }//GEN-LAST:event_enrollmenListActionPerformed
+
+    private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
+        dispose();
+        CEM1 c = new CEM1();
+        c.setVisible(true);
+    }//GEN-LAST:event_DashboardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +184,7 @@ public class CEM4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Dashboard;
     private javax.swing.JButton enrollmenList;
     private javax.swing.JTextArea enrollmentsListArea;
     private javax.swing.JLabel jLabel1;

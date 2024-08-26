@@ -44,16 +44,31 @@ public class CEM1 extends javax.swing.JFrame {
         enrollStudent.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         enrollStudent.setForeground(new java.awt.Color(255, 255, 255));
         enrollStudent.setText("Enroll Student");
+        enrollStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrollStudentActionPerformed(evt);
+            }
+        });
 
         approveEnrollment.setBackground(new java.awt.Color(102, 102, 102));
         approveEnrollment.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         approveEnrollment.setForeground(new java.awt.Color(255, 255, 255));
         approveEnrollment.setText("Approve Enrollment");
+        approveEnrollment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approveEnrollmentActionPerformed(evt);
+            }
+        });
 
         listEnrollments.setBackground(new java.awt.Color(102, 102, 102));
         listEnrollments.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         listEnrollments.setForeground(new java.awt.Color(255, 255, 255));
         listEnrollments.setText("List Enrollments");
+        listEnrollments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listEnrollmentsActionPerformed(evt);
+            }
+        });
 
         Dashboard.setBackground(new java.awt.Color(102, 102, 102));
         Dashboard.setForeground(new java.awt.Color(204, 204, 204));
@@ -144,6 +159,24 @@ public class CEM1 extends javax.swing.JFrame {
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DashboardActionPerformed
+
+    private void enrollStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollStudentActionPerformed
+        dispose();
+        CEM2 c = new CEM2();
+        c.setVisible(true);
+    }//GEN-LAST:event_enrollStudentActionPerformed
+
+    private void approveEnrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveEnrollmentActionPerformed
+        dispose();
+        CEM3 c = new CEM3();
+        c.setVisible(true);
+    }//GEN-LAST:event_approveEnrollmentActionPerformed
+
+    private void listEnrollmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listEnrollmentsActionPerformed
+        dispose();
+        CEM4 c = new CEM4();
+        c.setVisible(true);
+    }//GEN-LAST:event_listEnrollmentsActionPerformed
 
     /**
      * @param args the command line arguments

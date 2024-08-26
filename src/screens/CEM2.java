@@ -4,12 +4,15 @@
  */
 package screens;
 
+import ams.CourseEnrollmentManagement;
+import java.time.LocalDate;
+
 /**
  *
  * @author user
  */
 public class CEM2 extends javax.swing.JFrame {
-
+    CourseEnrollmentManagement c = new CourseEnrollmentManagement();
     /**
      * Creates new form CEM2
      */
@@ -88,7 +91,7 @@ public class CEM2 extends javax.swing.JFrame {
 
         Dashboard.setBackground(new java.awt.Color(102, 102, 102));
         Dashboard.setForeground(new java.awt.Color(204, 204, 204));
-        Dashboard.setText("Dashboard");
+        Dashboard.setText("<");
         Dashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DashboardActionPerformed(evt);
@@ -100,31 +103,34 @@ public class CEM2 extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(enrollStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(enrollmentTime, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enrollmentStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(courseCodeEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(studentIdEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(enrollStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(enrollmentTime, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(enrollmentStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(courseCodeEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(studentIdEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Dashboard)))
                 .addContainerGap(135, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Dashboard)
-                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addContainerGap()
+                .addComponent(Dashboard)
+                .addGap(65, 65, 65)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(courseCodeEnrollment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -142,9 +148,7 @@ public class CEM2 extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(69, 69, 69)
                 .addComponent(enrollStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(Dashboard)
-                .addContainerGap())
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
@@ -191,11 +195,23 @@ public class CEM2 extends javax.swing.JFrame {
     }//GEN-LAST:event_enrollmentStatusActionPerformed
 
     private void enrollStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollStudentActionPerformed
-        // TODO add your handling code here:
+        String cCode = courseCodeEnrollment.getText().toString();
+        String id = studentIdEnrollment.getText().toString();
+        String time = enrollmentTime.getText().toString();
+        String status = enrollmentStatus.getText().toString();
+        LocalDate date = LocalDate.now();
+        c.enrollStudent(cCode, id, date, time, status);
+        courseCodeEnrollment.setText("");
+        studentIdEnrollment.setText("");
+        enrollmentTime.setText("");
+        enrollmentStatus.setText("");
+        
     }//GEN-LAST:event_enrollStudentActionPerformed
 
     private void DashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        CEM1 c = new CEM1();
+        c.setVisible(true);
     }//GEN-LAST:event_DashboardActionPerformed
 
     /**
